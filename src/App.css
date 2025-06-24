@@ -1,0 +1,207 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8fafc;
+}
+
+h1 {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.calendar-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.calendar-main {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weekday-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr); /* always 6 rows */
+  gap: 10px;
+  height: 500px; /* full calendar height */
+}
+
+
+.day-box {
+  height: 100%; /* fills its row */
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 0.85rem;
+  overflow-y: auto; /* ✅ enables scroll if content is long */
+  box-sizing: border-box;
+}
+
+
+
+.day-box.today {
+  background-color: #fee2e2;
+  border-color: #f87171;
+}
+
+.day-box .count {
+  font-size: 0.7rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  max-width: 300px;
+  margin: 100px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 20;
+}
+
+.modal input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* ✅ Center vertically */
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.calendar-main {
+  max-width: 900px;
+  width: 100%;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+
+.event-badge {
+  background-color: #4f46e5;
+  color: white;
+  padding: 2px 4px;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-badge {
+  background-color: #4f46e5;
+  color: white;
+  padding: 2px 4px;
+  margin-top: 4px;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge-buttons button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.event-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 4px;
+  margin-top: 4px;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.7rem;
+}
+
+.badge-buttons button {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);  /* 7 days */
+  grid-template-rows: repeat(6, 100px);   /* 6 weeks, each 100px tall */
+  gap: 5px;
+  width: 100%;
+  max-width: 700px;
+  height: 600px; /* ensures static height */
+}
+
+.calendar-day {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 4px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  height: 100px;      /* match grid-template-rows */
+  max-height: 100px;
+}
+
